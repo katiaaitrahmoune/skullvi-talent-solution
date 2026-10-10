@@ -10,7 +10,7 @@ const MAX_MB = 5;
 // Optional proof upload (PDF/PNG/JPG, 5 MB). Stores the File in the form under `name`.
 export function FileAttach({ name, label }: { name: string; label: string }) {
   const { watch, setValue } = useFormContext<ApplicationValues>();
-  const file = watch(name as never) as File | null | undefined;
+  const file = watch(name as never) as unknown as File | null | undefined;
   const [tooBig, setTooBig] = useState(false);
 
   return (
