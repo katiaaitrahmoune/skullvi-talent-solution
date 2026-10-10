@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  THEME TOKENS (RGB channels, so Tailwind opacity modifiers work).
+  >>> Swap these values with the exact SKULLVI hex colors. <<<
+*/
+:root {
+  /* Primary = SKULLVI orange (#E14313), used for every CTA on skullvi.org */
+  --brand-50: 254 243 238;
+  --brand-100: 253 228 218;
+  --brand-200: 250 198 177;
+  --brand-500: 225 67 19;
+  --brand-600: 190 54 13;
+  --brand-700: 153 43 11;
+  --brand-900: 74 20 6;
+
+  /* Ribbon / flag colors from the logo and hero swoosh */
+  --accent-400: 236 197 5;   /* yellow  #ECC505 */
+  --accent-500: 245 162 0;   /* amber   #F5A200 */
+  --green-500: 41 146 47;    /* green   #29922F */
+  --green-600: 13 139 53;    /* green   #0D8B35 */
+  --blue-500: 74 123 183;    /* tagline blue */
+
+  /* Light surfaces */
+  --ink: 1 1 12;             /* #01010C */
+  --muted: 113 114 120;      /* #717278 */
+  --line: 228 229 233;
+  --page: 248 249 250;       /* #F8F9FA */
+
+  /* Dark surfaces (hero, header, footer) */
+  --night: 1 1 12;           /* #01010C */
+  --night-line: 50 50 60;    /* #32323C */
+  --night-muted: 124 125 131;/* #7C7D83 */
+  --night-btn: 68 68 68;     /* #444444 secondary button */
+
+  --danger: 220 38 38;
+}
+
+@layer base {
+  html {
+    @apply bg-page text-ink antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--brand-500));
+    outline-offset: 2px;
+  }
+}
